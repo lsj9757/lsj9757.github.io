@@ -239,6 +239,130 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/03/22/python部分笔记/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="lsj">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/hsq.png">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="save the world by program">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2017/03/22/python部分笔记/" itemprop="url">python部分笔记</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-03-22T12:02:32+08:00">
+                2017-03-22
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          <h3 id="1-数据结构的python笔记-小甲鱼-："><a href="#1-数据结构的python笔记-小甲鱼-：" class="headerlink" title="1.数据结构的python笔记(小甲鱼)："></a>1.数据结构的python笔记(小甲鱼)：</h3><p>9-for…in../range<br>10-append/extend/insert/[:]<br>11-remove/del/pop<br>12-count/index/reverse/sort<br>
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2017/03/22/python部分笔记/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/01/12/js部分小记/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -309,15 +433,16 @@
 
       
         
-          
-            <h3 id="1-比较实用的js获取表单数据并遍历数据的方法，name是指每条表单的name属性。"><a href="#1-比较实用的js获取表单数据并遍历数据的方法，name是指每条表单的name属性。" class="headerlink" title="1. 比较实用的js获取表单数据并遍历数据的方法，name是指每条表单的name属性。"></a>1. 比较实用的js获取表单数据并遍历数据的方法，name是指每条表单的name属性。</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">var data = $(&quot;#button&quot;).serializeArray();</span><br><span class="line">    postData = &#123;&#125;;</span><br><span class="line">    $(data).each(function(i)&#123;</span><br><span class="line">       postData[this.name] = this.value;</span><br><span class="line">    &#125;);</span><br><span class="line">    console.log(postData);</span><br><span class="line">    // 将获取到的数据post给服务器</span><br><span class="line">   $.post..........</span><br></pre></td></tr></table></figure>
+          <h3 id="1-比较实用的js获取表单数据并遍历数据的方法，name是指每条表单的name属性。"><a href="#1-比较实用的js获取表单数据并遍历数据的方法，name是指每条表单的name属性。" class="headerlink" title="1. 比较实用的js获取表单数据并遍历数据的方法，name是指每条表单的name属性。"></a>1. 比较实用的js获取表单数据并遍历数据的方法，name是指每条表单的name属性。</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">var data = $(&quot;#button&quot;).serializeArray();</span><br><span class="line">    postData = &#123;&#125;;</span><br><span class="line">    $(data).each(function(i)&#123;</span><br><span class="line">       postData[this.name] = this.value;</span><br><span class="line">    &#125;);</span><br><span class="line">    console.log(postData);</span><br><span class="line">    // 将获取到的数据post给服务器</span><br><span class="line">   $.post..........</span><br></pre></td></tr></table></figure>
 <p>一般也可以直接获取比如：var username = $(‘input[name=”username”]’).val();<br>array_unique()是排重方法<br>exit(json_encode(array));输出JSON数据</p>
-<h3 id="2-js基础函数小结"><a href="#2-js基础函数小结" class="headerlink" title="2.js基础函数小结"></a>2.js基础函数小结</h3><p>1-indexOf()-方法可返回某个指定的字符串值在字符串中首次出现的位置。<br>2-forEach()-方法用于调用数组的每个元素，并将元素传递给回调函数。 arr.forEach(function(e){e==….<br>3-splice()-方法用于插入、删除或替换数组的元素。//splice方法会改变数组长度，当减掉一个元素后，<br>后面的元素都会前移，因此需要相应减少i的值。<br>4-slice() 方法可从已有的数组中返回选定的元素。 concat()-方法用于连接两个或多个数组。<br>6-unshift() 方法可向数组的开头添加一个或更多元素，并返回新的长度。<br>7-shift()删除并返回数组的第一个元素</p>
-<h3 id="3-JS遇到的问题："><a href="#3-JS遇到的问题：" class="headerlink" title="3.JS遇到的问题："></a>3.JS遇到的问题：</h3><p>setTimeout里面的this是指向window，保存当前对象this为别名that 和 通过闭包得到当前作用域，<br>以访问保存好的对象that;当对象方法里面多层嵌套函数或者setTimeout,setInterval等方法丢失this<br>（也就是this不指向当前对象而是window）,所以在this指向正确的作用域保存var that = this就变得很实用了。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">function obj() &#123; </span><br><span class="line">this.fn = function() &#123; </span><br><span class="line">var that = this;//保存当前对象this </span><br><span class="line">alert(&quot;ok&quot;); </span><br><span class="line">setTimeout(function()&#123; </span><br><span class="line">that.fn(); </span><br><span class="line">&#125;, 1000);//通过闭包得到当前作用域，好访问保存好的对象that </span><br><span class="line">&#125; </span><br><span class="line">&#125; </span><br><span class="line">var o = new obj(); </span><br><span class="line">o.fn();</span><br></pre></td></tr></table></figure></p>
-<h3 id="4-往数据库一个字段存对象问题："><a href="#4-往数据库一个字段存对象问题：" class="headerlink" title="4.往数据库一个字段存对象问题："></a>4.往数据库一个字段存对象问题：</h3><p> <img src="/images/csj.jpg" alt=""><br> 这是最近用vue做一个小东西时遇到了一点问题，稍微整理了一下，以免以后看不懂~</p>
-<p>未完。。。</p>
-
-          
+<h3 id="2-js基础函数小结"><a href="#2-js基础函数小结" class="headerlink" title="2.js基础函数小结"></a>2.js基础函数小结</h3><p>…<br>
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2017/01/12/js部分小记/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
         
       
     </div>
@@ -434,15 +559,14 @@
 
       
         
-          
-            <h2 id="应着时代学了这个PHP框架-发现条条框框真的很多。-或许这就是mvc吧"><a href="#应着时代学了这个PHP框架-发现条条框框真的很多。-或许这就是mvc吧" class="headerlink" title="应着时代学了这个PHP框架= =发现条条框框真的很多。.或许这就是mvc吧"></a>应着时代学了这个PHP框架= =发现条条框框真的很多。.或许这就是mvc吧</h2><p>1.<br>TP框架系统还提供了专用 js 和 css 标签，专门用于加载<br>//使用专用标签</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">&lt;js href=&quot;__PUBLIC__/js/index.js&quot; /&gt;</span><br><span class="line">&lt;css href=&quot;__PUBLIC__/css/index.css&quot; /&gt;</span><br></pre></td></tr></table></figure>
-<p>路由功能可以配置URL<br>U功能可以用于 URL 的动态生成。<br>TP里的add方法的返回值是刚添加的那条数据的ID！！！！</p>
-<p>2.<br>kindeditor是个编辑器插件，在editor/php/demo.php里是可以用的，在examples/index.html有各种各样的模式。<br>以后可以使用。</p>
-<p>3.<br>跟着学习TP的课程笔记：<br>4-3是Public/js/admin/login.js<br>4-4是Application/common/common/funtion.php的show方法<br>4-5是Common的Model模板里的AdminModel.class.php，以及login控制器的check方法<br>4-6写了点session。新增了url路径<br>5-1的 CommonController 这块可以不需要使用，可以在其他控制器里被继承<br>5-2是Public/js/admin/common.js的提交form表单操作，是在View/index下的footer.html引用的<br>5-3是Common的Model模板里的MenuModel.class.php的insert方法,以及Menu控制器的add方法，注意模板都放在了Common层！！！<br>5-4是Menu模板里的getMenus及getMenusCount分页方法，Menu控制器的index实现分页页面，还有公共方法function.php里的getMenuType..<br>5-5是Menu控制器的index实现搜索类型（其实并不是搜索！！而是通过传入data数据来显示特定的数据库内容！）<br>5-6里视图Menu里index.html编辑按钮span利用attr-id属性传给common.js。 控制器Menu里的edit（显示）和save（修改）方法和模板Menu里的find和updateMenuById方法，注意编辑页面需添加一个主键ID(input)。在add方法里添加判断如果此ID已有则调用save方法<br>5-7同上删除按钮a利用attr-id属性传给common.js及todelete方法。控制器Menu里的setStatus方法和模板Menu里的updateStatusById方法<br>5-8用户自己的排序操作：视图Menu里index.html添加了form id=singcms-listorder等，common.js的排序操作，控制器Menu里的listorder方法和模板Menu里的updateMenuListorderById方法<br>5-9左侧菜单管理：视图index里nav.html的引用getActive函数来改变高亮，模板Menu里的getAdminMenus方法(后端菜单)，funciton.php里getAdminMenuUrl和getActive方法<br>6-1图片上传。用了uploadify插件，视图Content里的add.html，image.js图片上传功能（异步，成功则返回来的是文件的路径给input使其能显示缩略图)，模板Uploadimage上传图片类和控制器image里的ajaxuploadimage方法编辑器上传。用了KindEditor插件，需要引入js里的kindeditor-all.js和add.html下的js代码函数引入。function.php里的showKind，控制器image里的kindupload方法<br>6-2文章管理添加功能-&gt;显示：模板Menu里的getBarMenus方法(前端菜单)，以及在config.php配置了颜色等东西，在控制器Content的add方法用大C函数引入（配置的东西）。在add.html里用<br><code>&lt;foreach name=&quot;&quot; item=&quot;&quot;&gt;</code>循环出颜色/所属栏目/来源（注意：这里传过去添加的值是id！并不是值！！！）-&gt;添加：模板News里的insert方法，模板NewsContent的insert方法（这里写了用上述编辑器插件所写的文章如何存入数据表中），function.php里getLoginUsername方法，完善控制器Content的add方法<br>6-3列表功能开发：模板News里的getNews/getNewsCount方法，控制器Content里的index实现分页与搜索。用funtion里的getCatName方法来处理catid(栏目显示，用getCopyFromById方法来处理copyfrom(来源)。(因为存的是id所以不能直接显示)。视图Content里index.html的{$new.catid|getCatName=$webSiteMenu,<code>###</code>} 等<br>6-4修改功能-&gt;显示：（不论是菜单编辑还是文章编辑页面都没有foreach或volist出数据，除了文章编辑的颜色和来源等用了可能是因为编辑只有一条数据的原因）：视图Content里index.html编辑按钮span利用attr-id属性传给common.js控制器Content里的edit方法（其实用来显示原始数据），模板News里的find方法<br>6-5修改功能-&gt;修改：注意编辑页面需添加一个主键ID(input)。在add方法里添加判断如果此ID已有则调用save方法。控制器Content里的save方法，模板News里的updateById方法和模板NewsContent里的updateNewsById方法删除功能：同菜单删除是改变其status值之外（用和菜单删除一样的common.js删除操作， 控制器Content里的setStatus方法，模板News里的updateStatusById方法），增加了可以自己变换状态（common.js的修改状态操作）及视图Content的index里的一点<code>&lt;if condition=&quot;$new[&#39;status&#39;] eq 1&quot;&gt;0&lt;else/&gt;1&lt;/if&gt;&quot;</code>等还加了js。文章排序功能：视图Content里index.html添加了form id=singcms-listorder&gt;等，common.js的排序操作(同菜单相同的JS)，控制器Content里的listorder方法和模板News里的updateNewsListorderById方法<br>7-1推荐位管理-&gt;数据推送功能开发：在视图Content里添加checkbox（并传ID值）和推荐位管理显示控制器Content里的index添加D(“Position”)-&gt;getNormalPositions();视图Content里index.html添加了推荐位操作<br>7-2推荐位添加-&gt;common.js里的推送JS相关/，控制器Content里的push方法和模板News的getNewsByNewsIdIn方法和模板PositionContent的insert方法<br>7-3推荐位页面显示：同上菜单和文章。。。添加功能。。。<br>7-4略。。<br>8-1：基础功能，控制器Basic，模板Basic的几个方法（用了F方法缓存数据放在Runtime/Data/basic_web_config内）<br>9-1首页页面展示：头部-&gt;在Home/View/Index/header.html里调用Common/Model下的Basic和Menu模板里方法内容-&gt;Home/Controller下的Index控制器的index方法。视图Index里的Index.html的显示<br>9-2完善首页内容部分-&gt;。。右侧部分-&gt;Home/View/Index/right.html用<code>&lt;if condition=&quot;$k eq 1&quot;&gt;</code>的方法判断第一的不同错误页面部分-&gt;Home/Controller下的Common控制器的error方法<br>9-3栏目页：控制器Cat和Detail，模板。。。用htmlspecialchars_decode转换存在编辑器里的文章内容代码预览页：控制器Detail的View方法。。<br>9-4用Home/Controller下的Index控制器的index方法的buildHtml生成静态页面（在common/config和/index.php均有配置），在视图Basic里的cache.html的JS生成更新静态页面操作。-&gt;自动首页静态化缓存：控制器Index的crontab_build_html方法，/cron.php里的define(‘APP_CRONTAB’, 1);if(!$argv || count($argv) &lt; 4) {die(“parmas_is_error”);}来使其在命令行调用方法。<br>9-5阅读数显示：控制器Index的getCount方法，及index.html引入的count.js等</p>
-<p>未完。。</p>
-
-          
+          <h3 id="应着时代学了这个PHP框架-发现条条框框真的很多。-或许这就是mvc吧"><a href="#应着时代学了这个PHP框架-发现条条框框真的很多。-或许这就是mvc吧" class="headerlink" title="应着时代学了这个PHP框架= =发现条条框框真的很多。.或许这就是mvc吧"></a>应着时代学了这个PHP框架= =发现条条框框真的很多。.或许这就是mvc吧</h3><p>…<br>
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2016/11/12/thinkphp初窥/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
         
       
     </div>
@@ -646,7 +770,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">3</span>
+                  <span class="site-state-item-count">4</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
