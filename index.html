@@ -496,7 +496,7 @@
         
           <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2017/01/12/js部分小记/" itemprop="url">js部分小记</a></h1>
+                <a class="post-title-link" href="/2017/01/12/js部分小记/" itemprop="url">js小记</a></h1>
         
 
         <div class="post-meta">
@@ -549,7 +549,7 @@
         
           <h1 id="一-比较实用的js获取表单数据并遍历数据的方法，name是指每条表单的name属性。"><a href="#一-比较实用的js获取表单数据并遍历数据的方法，name是指每条表单的name属性。" class="headerlink" title="一. 比较实用的js获取表单数据并遍历数据的方法，name是指每条表单的name属性。"></a>一. 比较实用的js获取表单数据并遍历数据的方法，name是指每条表单的name属性。</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">var data = $(&quot;#button&quot;).serializeArray();</span><br><span class="line">    postData = &#123;&#125;;</span><br><span class="line">    $(data).each(function(i)&#123;</span><br><span class="line">       postData[this.name] = this.value;</span><br><span class="line">    &#125;);</span><br><span class="line">    console.log(postData);</span><br><span class="line">    // 将获取到的数据post给服务器</span><br><span class="line">   $.post..........</span><br></pre></td></tr></table></figure>
 <p>一般也可以直接获取比如：var username = $(‘input[name=”username”]’).val();<br>array_unique()是排重方法<br>exit(json_encode(array));输出JSON数据</p>
-<h1 id="二-js基础函数小结"><a href="#二-js基础函数小结" class="headerlink" title="二.js基础函数小结"></a>二.js基础函数小结</h1><p>…<br>
+<h1 id="二-基础函数小结"><a href="#二-基础函数小结" class="headerlink" title="二.基础函数小结"></a>二.基础函数小结</h1><p>…<br>
           <!--noindex-->
           <div class="post-button text-center">
             <a class="btn" href="/2017/01/12/js部分小记/#more" rel="contents">
