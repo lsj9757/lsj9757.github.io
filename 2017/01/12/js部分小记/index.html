@@ -89,7 +89,7 @@
 <meta property="og:locale" content="zh-Hans">
 <meta property="og:image" content="http://yoursite.com/images/yxl.png">
 <meta property="og:image" content="http://yoursite.com/images/csj.jpg">
-<meta property="og:updated_time" content="2018-04-04T13:16:55.445Z">
+<meta property="og:updated_time" content="2018-04-04T13:23:50.152Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="web小记">
 <meta name="twitter:description" content="一. 比较实用的jq获取表单数据并遍历数据的方法，name是指每条表单的name属性。12345678var data = $(&amp;quot;#button&amp;quot;).serializeArray();    postData = &amp;#123;&amp;#125;;    $(data).each(function(i)&amp;#123;       postData[this.name] = this.va">
@@ -421,15 +421,15 @@
 <h3 id="3"><a href="#3" class="headerlink" title="3/"></a>3/</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">var test = function()&#123;</span><br><span class="line">        alert(this === window);</span><br><span class="line">    &#125;</span><br><span class="line">var test1 = &#123;</span><br><span class="line">&#125;</span><br><span class="line">test.apply(test1);</span><br></pre></td></tr></table></figure>
 <p>该函数的作用就是”调用一个对象的一个方法，以另一个对象替换当前对象“ 所以了’window’ 对象已经被替代为’test1’，自然为’false’了</p>
 <h2 id="8-原型链"><a href="#8-原型链" class="headerlink" title="8.原型链"></a>8.原型链</h2><p> <img src="/images/yxl.png" alt=""></p>
-<p>1-Instanceof的判断队则是：沿着A的&lt;<strong>proto</strong>&gt;这条线来找，同时沿着B的prototype这条线来找，如果两条线能找到同一个引用，即同一个对象，那么就返回true。如果找到终点还未重合，则返回false。instanceof表示的就是一种继承关系，或者原型链的结构</p>
+<p>1-Instanceof的判断队则是：沿着A的——proto——这条线来找，同时沿着B的prototype这条线来找，如果两条线能找到同一个引用，即同一个对象，那么就返回true。如果找到终点还未重合，则返回false。instanceof表示的就是一种继承关系，或者原型链的结构</p>
 <p>2-（undefined, number, string,boolean）属于简单的值类型，不是对象。<br>（函数、数组、对象、null、new Number(10)）都是对象。他们都是引用类型<br>-值类型的类型判断用typeof，引用类型的类型判断用instanceof。</p>
 <p>3-对象都是通过函数创建的= =<br>console.log(typeof (Object));  // function<br>console.log(typeof (Array));  // function</p>
-<p>4-每个对象都有一个&lt;<strong>proto</strong>&gt;属性，指向创建该对象的函数的prototype。<br>但是Object.prototype确实一个特例——它的&lt;<strong>proto</strong>&gt;指向的是null，切记切记！</p>
+<p>4-每个对象都有一个——proto——属性，指向创建该对象的函数的prototype。<br>但是Object.prototype确实一个特例——它的——proto——指向的是null，切记切记！</p>
 <p>5-传值传参的时候，我们在函数中改变了参数的值，其对应的变量的值并不改变，值类型传参就是将变量保存的内容复制到函数的形参中，他们是两个不同的变量，值不过保存的内容相同不了.<br>引用传参保存的是一个地址，这个地址里保存的是变量的具体值，而引用类型作为参数的时候，是将变量保存的地址值赋值到参数变量里，这样他们都指向了同一个内容，这样我们改变参数的成员的话，那么相应的变量的成员也会改变。</p>
-<p>6-访问一个对象的属性时，先在基本属性中查找，如果没有，再沿着&lt;<strong>proto</strong>&gt;这条链向上找，这就是原型链</p>
+<p>6-访问一个对象的属性时，先在基本属性中查找，如果没有，再沿着——proto——这条链向上找，这就是原型链</p>
 <p>7-hasOwnProperty：区分一个属性到底是基本的还是从原型中找到的</p>
 <p>8-由于所有的对象的原型链都会找到Object.prototype，因此所有的对象都会有Object.prototype的方法。这就是所谓的”继承”。</p>
-<p>9-总图中：<br>对象的&lt;<strong>proto</strong>&gt;最终都是指向Object.prototype;<br>函数的&lt;<strong>proto</strong>&gt;都是指向Function.prototype;<br>而Function.prototype的&lt;<strong>proto</strong>&gt;就是Object.prototype</p>
+<p>9-总图中：<br>对象的——proto——最终都是指向Object.prototype;<br>函数的——proto——都是指向Function.prototype;<br>而Function.prototype的——proto——就是Object.prototype</p>
 <p>10-<br>变量、函数表达式——变量声明，默认赋值为undefined；<br>this——赋值；<br>函数声明——赋值；<br>这三种数据的准备情况我们称之为“执行上下文”或者“执行上下文环境”。</p>
 <h1 id="四-往数据库一个字段存对象问题："><a href="#四-往数据库一个字段存对象问题：" class="headerlink" title="四.往数据库一个字段存对象问题："></a>四.往数据库一个字段存对象问题：</h1><p> <img src="/images/csj.jpg" alt=""><br> 这是最近用vue做一个小东西时遇到了一点问题，稍微整理了一下，以免以后看不懂~</p>
 <h1 id="五-事件代理或事件委托详解："><a href="#五-事件代理或事件委托详解：" class="headerlink" title="五.事件代理或事件委托详解："></a>五.事件代理或事件委托详解：</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br></pre></td><td class="code"><pre><span class="line">window.onload = function()&#123;</span><br><span class="line">            var oBtn = document.getElementById(&quot;btn&quot;);</span><br><span class="line">            var oUl = document.getElementById(&quot;ul1&quot;);</span><br><span class="line">            var aLi = oUl.getElementsByTagName(&apos;li&apos;);</span><br><span class="line">            var num = 4;</span><br><span class="line">            </span><br><span class="line">            //事件委托，添加的子元素也有事件</span><br><span class="line">            oUl.onmouseover = function(ev)&#123;</span><br><span class="line">                var ev = ev || window.event;</span><br><span class="line">                var target = ev.target || ev.srcElement;</span><br><span class="line">                if(target.nodeName.toLowerCase() == &apos;li&apos;)&#123;</span><br><span class="line">                    target.style.background = &quot;red&quot;;</span><br><span class="line">                &#125;</span><br><span class="line">                </span><br><span class="line">            &#125;;</span><br><span class="line">            oUl.onmouseout = function(ev)&#123;</span><br><span class="line">                var ev = ev || window.event;</span><br><span class="line">                var target = ev.target || ev.srcElement;</span><br><span class="line">                if(target.nodeName.toLowerCase() == &apos;li&apos;)&#123;</span><br><span class="line">                    target.style.background = &quot;#fff&quot;;</span><br><span class="line">                &#125;</span><br><span class="line">                </span><br><span class="line">            &#125;;</span><br><span class="line">            </span><br><span class="line">            //添加新节点</span><br><span class="line">            oBtn.onclick = function()&#123;</span><br><span class="line">                num++;</span><br><span class="line">                var oLi = document.createElement(&apos;li&apos;);</span><br><span class="line">                oLi.innerHTML = 111*num;</span><br><span class="line">                oUl.appendChild(oLi);</span><br><span class="line">            &#125;;</span><br><span class="line">        &#125;</span><br></pre></td></tr></table></figure>
@@ -524,7 +524,7 @@
 <ol>
 <li>创建一个空对象，并且 this 变量引用该对象，同时还继承了该函数的原型</li>
 <li>属性和方法被加入到 this 引用的对象中</li>
-<li>新创建的对象由 this 所引用，并且最后隐式的返回 this<br>var obj  = {};<br>obj.&lt;<strong>proto</strong>&gt; = Base.prototype;<br>Base.call(obj); </li>
+<li>新创建的对象由 this 所引用，并且最后隐式的返回 this<br>var obj  = {};<br>obj.——proto—— = Base.prototype;<br>Base.call(obj); </li>
 </ol>
 <h2 id="13-js延迟加载的方式有哪些？"><a href="#13-js延迟加载的方式有哪些？" class="headerlink" title="13.js延迟加载的方式有哪些？"></a>13.js延迟加载的方式有哪些？</h2><p>答：</p>
 <ol>
