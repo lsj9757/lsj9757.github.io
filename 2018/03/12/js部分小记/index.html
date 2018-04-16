@@ -90,7 +90,7 @@
 <meta property="og:image" content="http://yoursite.com/images/js1.png">
 <meta property="og:image" content="http://yoursite.com/images/yxl.png">
 <meta property="og:image" content="http://yoursite.com/images/csj.jpg">
-<meta property="og:updated_time" content="2018-04-14T12:45:31.580Z">
+<meta property="og:updated_time" content="2018-04-15T09:31:07.873Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="web小记">
 <meta name="twitter:description" content="一. 比较实用的jq获取表单数据并遍历数据的方法，name是指每条表单的name属性。12345678var data = $(&amp;quot;#button&amp;quot;).serializeArray();    postData = &amp;#123;&amp;#125;;    $(data).each(function(i)&amp;#123;       postData[this.name] = this.va">
@@ -361,7 +361,7 @@
 <p>15-<br>var str = “A”;str.charCodeAt();  // 65<br>var num = 97;String.fromCharCode(num);  // ‘a’</p>
 </blockquote>
 <blockquote>
-<p>16-Object.keys(n).sort((x,y) =&gt;n[x]&lt; n[y])//对对象的键值进行排序</p>
+<p>16-Object.keys(n).sort((x,y) =&gt;n[x]&lt; n[y])//对对象内的键值进行排序</p>
 </blockquote>
 <blockquote>
 <p>17-document.getElementById(“button1”).style.backgroundColor=”red”;</p>
@@ -370,7 +370,7 @@
 <p>18-解析器在向执行环境中加载数据时，对函数声明和函数表达式并不是一视同仁，解析器会率先读取函数声明，并在其执行任何代码之前可用。所以解析器会依次读入两个函数，且后面的函数会覆盖前面的函数，因此实际上两个语句都调用的是第二个函数</p>
 </blockquote>
 <blockquote>
-<p>19-JavaScript RegExp 对象</p>
+<p>19-JavaScript RegExp(是js内置函数(还有Error/Date/Function/Boolean/Array/String/Number/Obejct))</p>
 </blockquote>
 <p>JavaScript RegExp 对象有3个方法：test()、exec()、compile()<br>test()：检测一个字符串是否匹配某个正则表达式，如果匹配成功，返回true，否则返回false；<br>exec()：检索字符串中与正则表达式匹配的值，返回一个数组，存放匹配的结果；如果未找到，返回null；<br>compile():可以在脚本执行过程中编译正则表达式，也可以改变已有表达式。<br>注：match只是支持正则表达式的String对象的方法，不是RegExp对象的方法。</p>
 <blockquote>
@@ -445,9 +445,10 @@
 <blockquote>
 <p>37-关于typeof和instanceof:</p>
 </blockquote>
-<p>a instanceof Object //大写<br>typeof a == “object”  //小写且有引号<br>（undefined, number, string , boolean）属于简单的值类型，不是对象。<br>（null、函数、数组、对象、new Number(10)）都是对象。他们都是引用类型</p>
+<p>a instanceof Object //大写<br>typeof a == “object”  //小写且有引号<br>（null,undefined, number, string , boolean）属于简单的值类型，不是对象。<br>（函数、数组、对象、new Number(10)）都是对象。他们都是引用类型</p>
 <ul>
-<li>值类型（undefined等）的类型判断用typeof，引用类型（null等）的类型判断用instanceof。</li>
+<li>值类型（undefined等）的类型判断用typeof(但是typeof可以判断出function)，引用类型的类型判断用instanceof</li>
+<li>引用类型的变量其实也是基本类型，而引用指向的对象本身才是引用类型。null不指向任何变量，它是一个常量，所以说是基本类型。但是null要用instanceof来判断！！</li>
 <li>注意一下typeof null//object</li>
 </ul>
 <blockquote>
@@ -502,8 +503,19 @@
 </blockquote>
 <p>Number([])返回0<br>Number转换类型的参数如果为对象返回的就是NaN(Number({})返回的就是NaN)</p>
 <blockquote>
-<p>52-</p>
+<p>52-jq推荐”==”与”===”写法：</p>
 </blockquote>
+<ul>
+<li>a==null等于a===null||a===undefined（需要分辨出null和undefined时）</li>
+<li>其他最好全部用===</li>
+</ul>
+<blockquote>
+<p>53-如何理解JSON</p>
+</blockquote>
+<ul>
+<li>js的内置对象,有2个API：JSON.stringify和JSON.parse</li>
+<li>也是一种数据格式</li>
+</ul>
 <h2 id="html-css类："><a href="#html-css类：" class="headerlink" title="html+css类："></a>html+css类：</h2><blockquote>
 <p>1-text-transform</p>
 </blockquote>
@@ -1140,6 +1152,7 @@ timer = setTimeout(function() {
 <li>作为函数的参数，表示该函数的参数不是对象</li>
 <li>作为对象原型链的终点</li>
 </ol>
+<p>注：null==undefined // true (因为null和undefined都会转成false)</p>
 <h2 id="12-new操作符具体干了什么呢"><a href="#12-new操作符具体干了什么呢" class="headerlink" title="12.new操作符具体干了什么呢?"></a>12.new操作符具体干了什么呢?</h2><p>答：</p>
 <ol>
 <li>创建一个空对象，并且 this 变量引用该对象，同时还继承了该函数的原型</li>
