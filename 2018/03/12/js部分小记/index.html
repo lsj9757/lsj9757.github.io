@@ -93,7 +93,7 @@
 <meta property="og:image" content="http://yoursite.com/images/csj.jpg">
 <meta property="og:image" content="http://yoursite.com/images/http1.jpg">
 <meta property="og:image" content="http://yoursite.com/images/http2.jpg">
-<meta property="og:updated_time" content="2018-04-27T14:05:32.676Z">
+<meta property="og:updated_time" content="2018-04-29T12:38:08.973Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="web小记">
 <meta name="twitter:description" content="一. 比较实用的jq获取表单数据并遍历数据的方法，name是指每条表单的name属性。12345678var data = $(&amp;quot;#button&amp;quot;).serializeArray();    postData = &amp;#123;&amp;#125;;    $(data).each(function(i)&amp;#123;       postData[this.name] = this.va">
@@ -892,13 +892,13 @@
 <p>实现一个promise</p>
 </blockquote>
 <p>思路：<img src="/images/promise1.jpg" alt=""><br>实现：<a href="https://segmentfault.com/a/1190000009792439" target="_blank" rel="noopener">https://segmentfault.com/a/1190000009792439</a></p>
-<h2 id="7-javascript中的异步-macrotask-和-microtask"><a href="#7-javascript中的异步-macrotask-和-microtask" class="headerlink" title="7.javascript中的异步 macrotask 和 microtask"></a>7.javascript中的异步 macrotask 和 microtask</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">console.log(&apos;script start&apos;);</span><br><span class="line">setTimeout(function() &#123;</span><br><span class="line">  console.log(&apos;setTimeout&apos;);</span><br><span class="line">&#125;, 0);</span><br><span class="line">Promise.resolve().then(function() &#123;</span><br><span class="line">  console.log(&apos;promise1&apos;);</span><br><span class="line">&#125;).then(function() &#123;</span><br><span class="line">  console.log(&apos;promise2&apos;);</span><br><span class="line">&#125;);</span><br><span class="line">console.log(&apos;script end&apos;);</span><br><span class="line"></span><br><span class="line">//输出：</span><br><span class="line"></span><br><span class="line">script start</span><br><span class="line">script end</span><br><span class="line">promise1</span><br><span class="line">promise2</span><br><span class="line">setTimeout</span><br></pre></td></tr></table></figure>
+<h2 id="7-javascript中的异步-macrotask-和-microtask"><a href="#7-javascript中的异步-macrotask-和-microtask" class="headerlink" title="7.javascript中的异步 macrotask 和 microtask"></a>7.javascript中的异步 macrotask 和 microtask</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br></pre></td><td class="code"><pre><span class="line">console.log(&apos;main1&apos;);</span><br><span class="line"></span><br><span class="line">process.nextTick(function() &#123;</span><br><span class="line">    console.log(&apos;process.nextTick1&apos;);</span><br><span class="line">&#125;);</span><br><span class="line"></span><br><span class="line">setTimeout(function() &#123;</span><br><span class="line">    console.log(&apos;setTimeout&apos;);</span><br><span class="line">    process.nextTick(function() &#123;</span><br><span class="line">        console.log(&apos;process.nextTick2&apos;);</span><br><span class="line">    &#125;);</span><br><span class="line">&#125;, 0);</span><br><span class="line"></span><br><span class="line">new Promise(function(resolve, reject) &#123;</span><br><span class="line">    console.log(&apos;promise&apos;);</span><br><span class="line">    resolve();</span><br><span class="line">&#125;).then(function() &#123;</span><br><span class="line">    console.log(&apos;promise then&apos;);</span><br><span class="line">&#125;);</span><br><span class="line"></span><br><span class="line">console.log(&apos;main2&apos;);</span><br><span class="line"></span><br><span class="line">//输出：</span><br><span class="line">main1</span><br><span class="line">promise</span><br><span class="line">main2</span><br><span class="line">process.nextTick1</span><br><span class="line">promise then</span><br><span class="line">setTimeout</span><br><span class="line">process.nextTick2</span><br></pre></td></tr></table></figure>
 <blockquote>
 <p>javascript单线程的 Event Loop 里面，事件循环这两个队列会分两步执行：</p>
 </blockquote>
 <ol>
 <li>首先把Macrotask 中的事件放到stack,并执行,执行完毕;</li>
-<li>开始执行Microtask队列中的全部任务，执行完毕;</li>
+<li>开始执行Microtask队列中的全部任务，执行完毕;(process.nextTick 会优于 Promise执行)</li>
 <li>下一个循环，执行下一个task中的任务，重复第二步。</li>
 </ol>
 <p>Macrotasks一般包括: setTimeout, setInterval, setImmediate, I/O, UI rendering;<br>Microtasks一般包括: process.nextTick, Promises, Object.observe, MutationObserver;<br>需要注意的是js主线程也算macrotask，所以执行完script之后执行promise…</p>
@@ -1832,14 +1832,15 @@
 </ul>
 <h2 id="34-HTTP缓存（简洁）"><a href="#34-HTTP缓存（简洁）" class="headerlink" title="34.HTTP缓存（简洁）"></a>34.HTTP缓存（简洁）</h2><p>答：<br><img src="/images/http1.jpg" alt=""></p>
 <ol>
-<li><p>缓存存储策略：用来确定 Http 响应内容是否可以被客户端缓存，以及可以被哪些客户端缓存<br>-（Cache-Control ）<br>这个策略的作用只有一个，用于决定 Http 响应内容是否可缓存到客户端</p>
+<li><p>缓存存储策略：用来确定 Http 响应内容是否可以被客户端缓存，以及可以被哪些客户端缓存<br>-（Cache-Control ）<br>这个策略的作用只有一个，用于决定 Http 响应内容是否可缓存到客户端（描述的是一个相对时间）</p>
 </li>
-<li><p>缓存过期策略：客户端用来确认存储在本地的缓存数据是否已过期，进而决定是否要发请求到服务端获取数据<br>-（Expires）<br>这个策略的作用也只有一个，那就是决定客户端是否可直接从本地缓存数据中加载数据并展示（否则就发请求到服务端获取）</p>
+<li><p>缓存过期策略：客户端用来确认存储在本地的缓存数据是否已过期，进而决定是否要发请求到服务端获取数据<br>-（Expires）<br>这个策略的作用也只有一个，那就是决定客户端是否可直接从本地缓存数据中加载数据并展示（否则就发请求到服务端获取）（描述的是绝对时间）</p>
 </li>
-<li><p>缓存对比策略：将缓存在客户端的数据标识发往服务端，服务端通过标识来判断客户端，缓存数据是否仍有效，进而决定是否要重发数据。</p>
+<li><p>缓存对比策略：将缓存在客户端的数据标识发往服务端，服务端通过标识来判断客户端，缓存数据是否仍有效，进而决定是否要重发数据。协商缓存是利用的是【Last-Modified，If-Modified-Since】和【ETag、If-None-Match】这两对Header来管理的。</p>
 </li>
 </ol>
 <p><img src="/images/http2.jpg" alt=""><br>所以最终结果是：浏览器会再次请求服务端，并携带上 Last-Modified 指定的时间去服务器对比：<br>a）对比失败：服务器返回200并重发数据，客户端接收到数据后展示，并刷新本地缓存。<br>b）对比成功：服务器返回304且不重发数据，客户端收到304状态码后从本地读取缓存数据。</p>
+<p>如果资源已经被浏览器缓存下来，在缓存失效之前，再次请求时，默认会先检查是否命中强缓存，如果强缓存命中则直接读取缓存，如果强缓存没有命中则发请求到服务器检查是否命中协商缓存，如果协商缓存命中，则告诉浏览器还是可以从缓存读取，否则才从服务器返回最新的资源。这是默认的处理方式，这个方式可能被浏览器的行为改变：<br>1）当ctrl+f5强制刷新网页时，直接从服务器加载，跳过强缓存和协商缓存；<br>2）当f5刷新网页时，跳过强缓存，但是会检查协商缓存；</p>
 
       
     </div>
