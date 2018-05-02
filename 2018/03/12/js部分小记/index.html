@@ -93,7 +93,7 @@
 <meta property="og:image" content="http://yoursite.com/images/promise1.jpg">
 <meta property="og:image" content="http://yoursite.com/images/http1.jpg">
 <meta property="og:image" content="http://yoursite.com/images/http2.jpg">
-<meta property="og:updated_time" content="2018-05-02T07:08:57.737Z">
+<meta property="og:updated_time" content="2018-05-02T07:09:58.259Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="web小记">
 <meta name="twitter:description" content="一. 比较实用的jq获取表单数据并遍历数据的方法，name是指每条表单的name属性。12345678var data = $(&amp;quot;#button&amp;quot;).serializeArray();    postData = &amp;#123;&amp;#125;;    $(data).each(function(i)&amp;#123;       postData[this.name] = this.va">
@@ -858,7 +858,7 @@
 <ul>
 <li>LHS查询指的是找到变量的容器本身，从而可以对其进行赋值。也就是找到赋值操作的目标。LHS查询的时候会沿着作用域链进行查询，找到的话就会将值赋值给这个变量，如果到达作用域顶端仍然找不到，就会在作用域链顶端创建这个变量。</li>
 </ul>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">var a=2;</span><br><span class="line">var a=2;相当于var a; a=2;</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">var a=2;相当于var a; a=2;</span><br></pre></td></tr></table></figure>
 <ul>
 <li>这里的a就是一个LHS引用，我们只是想要为2找到一个赋值的目标，而不会去关心这个目标（这里为a）的值是多少什么的。因为var a;也就是已经把a添加到当前作用域了，所以LHS查询a的时候，找到了a，即找到了赋值操作的目标。如果没有var a;那么LHS查询a的时候，就会找不到a，就会在作用域中创建这个变量a。</li>
 </ul>
