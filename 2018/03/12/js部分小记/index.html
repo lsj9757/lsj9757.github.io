@@ -93,7 +93,7 @@
 <meta property="og:image" content="http://yoursite.com/images/promise1.jpg">
 <meta property="og:image" content="http://yoursite.com/images/http1.jpg">
 <meta property="og:image" content="http://yoursite.com/images/http2.jpg">
-<meta property="og:updated_time" content="2018-05-13T13:58:46.182Z">
+<meta property="og:updated_time" content="2018-05-14T08:15:18.243Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="大！前！端！坑&#x2F;记">
 <meta name="twitter:description" content="一. 比较实用的jq获取表单数据并遍历数据的方法，name是指每条表单的name属性。12345678var data = $(&amp;quot;#button&amp;quot;).serializeArray();    postData = &amp;#123;&amp;#125;;    $(data).each(function(i)&amp;#123;       postData[this.name] = this.va">
@@ -571,6 +571,9 @@
 <p>61-Object.entries()</p>
 </blockquote>
 <p>方法返回一个给定对象自身可枚举属性的键值对数组，其排列与使用 for…in 循环遍历该对象时返回的顺序一致（区别在于for-in循环也枚举原型链中的属性）</p>
+<blockquote>
+<p>62-Event 接口的 preventDefault( ) 方法，告诉user agent：如果此事件没有需要显式处理，那么它默认的动作也不要做（因为默认是要做的）。此事件还是继续传播，除非碰到事件侦听器调用stopPropagation() 或stopImmediatePropagation()，才停止传播</p>
+</blockquote>
 <h2 id="html-css类："><a href="#html-css类：" class="headerlink" title="html+css类："></a>html+css类：</h2><blockquote>
 <p>1-text-transform</p>
 </blockquote>
@@ -886,7 +889,7 @@
 <p>柯里化：</p>
 </blockquote>
 <p>ES5的话还是原帖比较详细：<a href="http://blog.csdn.net/crystal6918/article/details/77141741" target="_blank" rel="noopener">http://blog.csdn.net/crystal6918/article/details/77141741</a></p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line">最简单版本:x = x =&gt; a =&gt; a+x  //x(1)(2)</span><br><span class="line"></span><br><span class="line">function curry(fn) &#123;</span><br><span class="line">     //先获取p函数第一个参数之后的全部参数</span><br><span class="line">     var args = Array.prototype.slice.call(arguments,1);</span><br><span class="line">     //声明result函数</span><br><span class="line">     return function()&#123;</span><br><span class="line">         //使用concat合并两个或多个数组中的元素</span><br><span class="line">         //[]等价于Array.prototype </span><br><span class="line">         return fn.apply(null, args.concat([].slice.call(arguments)));</span><br><span class="line">     &#125;</span><br><span class="line"> &#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">//这样使用：</span><br><span class="line">function add(a, b) &#123;</span><br><span class="line">    return a + b;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">var addCurry = curry(add, 1, 2);</span><br><span class="line">addCurry() // 3</span><br><span class="line">//或者</span><br><span class="line">var addCurry = curry(add, 1);</span><br><span class="line">addCurry(2) // 3</span><br><span class="line">//或者</span><br><span class="line">var addCurry = curry(add);</span><br><span class="line">addCurry(1, 2) // 3</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br></pre></td><td class="code"><pre><span class="line">最简单版本:x = x =&gt; a =&gt; a+x  //x(1)(2)</span><br><span class="line"></span><br><span class="line">function curry(fn) &#123;</span><br><span class="line">     //先获取p函数第一个参数之后的全部参数</span><br><span class="line">     var args = Array.prototype.slice.call(arguments,1);</span><br><span class="line">     //声明result函数</span><br><span class="line">     return function()&#123;</span><br><span class="line">         //使用concat合并两个或多个数组中的元素</span><br><span class="line">         //[]等价于Array.prototype </span><br><span class="line">         return fn.apply(null, args.concat([].slice.call(arguments)));</span><br><span class="line">     &#125;</span><br><span class="line"> &#125;</span><br><span class="line">//这样使用：</span><br><span class="line">function add(a, b) &#123;</span><br><span class="line">    return a + b;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">var addCurry = curry(add, 1, 2);</span><br><span class="line">addCurry() // 3</span><br><span class="line">//或者</span><br><span class="line">var addCurry = curry(add, 1);</span><br><span class="line">addCurry(2) // 3</span><br><span class="line">//或者</span><br><span class="line">var addCurry = curry(add);</span><br><span class="line">addCurry(1, 2) // 3</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">//递归实现（比上面那个功能好）:</span><br><span class="line">add=(a,b)=&gt;&#123;</span><br><span class="line">  return a+b</span><br><span class="line">&#125;</span><br><span class="line">merge=(fn)=&gt;&#123;</span><br><span class="line">    var length = fn.length;</span><br><span class="line">    var args = [];</span><br><span class="line">    var result =  function (arg)&#123;</span><br><span class="line">        args.push(arg);</span><br><span class="line">        length--;</span><br><span class="line">        if(length &lt;= 0 )&#123;</span><br><span class="line">            return fn.apply(this, args);</span><br><span class="line">        &#125; else &#123;</span><br><span class="line">            return result;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    return result;</span><br><span class="line">&#125;</span><br><span class="line">var test3=merge(add)</span><br></pre></td></tr></table></figure>
 <h2 id="5-LHS查询和RHS查询"><a href="#5-LHS查询和RHS查询" class="headerlink" title="5.LHS查询和RHS查询"></a>5.LHS查询和RHS查询</h2><blockquote>
 <p>RHS查询与简单地查找某个变量的值别无二致，而LHS查询则是试图找到变量的容器本身，从而可以对其赋值。</p>
 </blockquote>
@@ -1433,6 +1436,8 @@
 </li>
 <li><p>Vue数据绑定这样做的好处是什么？父组件数据改变时，不会修改存储prop的子组件数据，只是以子组件数据为媒介，完成对prop的双向修改。</p>
 </li>
+<li><p><a href="https://segmentfault.com/a/1190000006599500" target="_blank" rel="noopener">https://segmentfault.com/a/1190000006599500</a></p>
+</li>
 </ul>
 <h2 id="5-vue路由"><a href="#5-vue路由" class="headerlink" title="5.vue路由"></a>5.vue路由</h2><ul>
 <li><p>以官方仓库下 examples/basic 基础例子来一点点具体分析整个流程。和流程相关的主要需要关注点的就是 components 、 history 目录以及 create-matcher.js 、 create-route-map.js、index.js 、 install.js。<br>从入口，作为插件，实例化 VueRouter，实例化 History，实例化 Vue，defineReactive 定义 _route，router-link 和 router-view 组件等几个方面展开分析<br><a href="https://www.tuicool.com/articles/jQRnIrF" target="_blank" rel="noopener">https://www.tuicool.com/articles/jQRnIrF</a></p>
@@ -1857,12 +1862,21 @@
 <p>分为4个步骤：</p>
 </blockquote>
 <ol>
-<li>浏览器会开启一个线程来处理这个请求，对URL分析判断如果是http协议就按照Web方式来处理，同时在远程DNS服务器上启动一个DNS查询(网址的解析是一个从右向左的过程)。这能使浏览器获得请求对应的 IP 地址。</li>
-<li>浏览器与远程 Web 服务器通过 TCP 三次握手协商来建立一个 TCP/IP 连接。该握手包括一个同步报文，一个同步-应答报文和一个应答报文，这三个报文在 浏览器和服务器之间传递。该握手首先由客户端尝试建立起通信，而后服务器应答并接受客户端的请求，最后由客户端发出该请求已经被接受的报文。</li>
-<li>一旦 TCP/IP 连接建立，浏览器会通过该连接向远程服务器发送 HTTP 的 GET 请求。发送HTTP请求的过程就是构建HTTP请求报文并通过TCP协议中发送到服务器指定端口(HTTP协议80/8080, HTTPS协议443)。HTTP请求报文是由三部分组成: 请求行(GET, POST, PUT, DELETE, OPTIONS, HEAD), 请求报头( Accept, Accept-Charset, Cookie…)和请求正文(传输数据(post..))。远程服务器找到资源并使用 HTTP 响应返回该资源，值为 200 的 HTTP 响应状态表示一个正确的响应。<br>HTTP响应报文也是由三部分组成: 状态码(xxx), 响应报头(Server, Connection…)和响应报文(通常HTML, CSS, JS, 图片等文件就放在这一部分)。</li>
-<li>此时，Web 服务器提供资源服务，客户端开始下载资源。</li>
+<li><p>浏览器会开启一个线程来处理这个请求，对URL分析判断如果是http协议就按照Web方式来处理，同时在远程DNS服务器上启动一个DNS查询(网址的解析是一个从右向左的过程)。这能使浏览器获得请求对应的 IP 地址。</p>
+</li>
+<li><p>浏览器与远程 Web 服务器通过 TCP 三次握手协商来建立一个 TCP/IP 连接。该握手包括一个同步报文，一个同步-应答报文和一个应答报文，这三个报文在 浏览器和服务器之间传递。该握手首先由客户端尝试建立起通信，而后服务器应答并接受客户端的请求，最后由客户端发出该请求已经被接受的报文。<br><a href="https://zhuanlan.zhihu.com/p/35768805" target="_blank" rel="noopener">https://zhuanlan.zhihu.com/p/35768805</a></p>
+</li>
+<li><p>一旦 TCP/IP 连接建立，浏览器会通过该连接向远程服务器发送 HTTP 的 GET 请求。发送HTTP请求的过程就是构建HTTP请求报文并通过TCP协议中发送到服务器指定端口(HTTP协议80/8080, HTTPS协议443)。HTTP请求报文是由三部分组成: 请求行(GET, POST, PUT, DELETE, OPTIONS, HEAD), 请求报头( Accept, Accept-Charset, Cookie…)和请求正文(传输数据(post..))。远程服务器找到资源并使用 HTTP 响应返回该资源，值为 200 的 HTTP 响应状态表示一个正确的响应。<br>HTTP响应报文也是由三部分组成: 状态码(xxx), 响应报头(Server, Connection…)和响应报文(通常HTML, CSS, JS, 图片等文件就放在这一部分)。</p>
+</li>
+<li><p>此时，Web 服务器提供资源服务，客户端开始下载资源。</p>
+</li>
 </ol>
 <p>请求返回后，便进入了我们关注的前端模块<br>简单来说，浏览器会解析 HTML 生成 DOM Tree，其次会根据 CSS 生成 CSS Rule Tree，而 javascript 又可以根据 DOM API 操作 DOM</p>
+<p>ps:OPTIONS请求方法的主要用途有两个：</p>
+<ol>
+<li>获取服务器支持的HTTP请求方法；也是黑客经常使用的方法。</li>
+<li>用来检查服务器的性能。例如：AJAX进行跨域请求时的预检，需要向另外一个域名的资源发送一个HTTP OPTIONS请求头，用以判断实际发送的请求是否安全。</li>
+</ol>
 <blockquote>
 <p>tcp部分</p>
 </blockquote>
@@ -2124,6 +2138,7 @@
 <li>按需加载：<br>传统的模块打包工具（module bundlers）最终将所有的模块编译生成一个庞大的bundle.js文件。但是在真实的app里边，“bundle.js”文件可能有10M到15M之大可能会导致应用一直处于加载中状态。因此Webpack使用许多特性来分割代码然后生成多个“bundle”文件，而且异步加载部分代码以实现按需加载。</li>
 <li>文件管理：<br>每个文件都是一个资源，可以用require/import导入js<br>每个入口文件会把自己所依赖(即require)的资源全部打包在一起，一个资源多次引用的话，只会打包一份<br>对于多个入口的情况，其实就是分别独立的执行单个入口情况，每个入口文件不相干(可用CommonsChunkPlugin优化)</li>
 <li>打包原理：<br>把所有依赖打包成一个bundle.js文件，通过代码分割成单元片段并按需加载。</li>
+<li><a href="https://yuque.com/iwantoffer/notebook/nzx8f9" target="_blank" rel="noopener">https://yuque.com/iwantoffer/notebook/nzx8f9</a></li>
 </ul>
 <h2 id="33-关于DNS的获取流程"><a href="#33-关于DNS的获取流程" class="headerlink" title="33.关于DNS的获取流程"></a>33.关于DNS的获取流程</h2><p>答：</p>
 <ul>
