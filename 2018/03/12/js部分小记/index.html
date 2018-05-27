@@ -93,7 +93,7 @@
 <meta property="og:image" content="http://yoursite.com/images/promise1.jpg">
 <meta property="og:image" content="http://yoursite.com/images/http1.jpg">
 <meta property="og:image" content="http://yoursite.com/images/http2.jpg">
-<meta property="og:updated_time" content="2018-05-19T01:04:05.568Z">
+<meta property="og:updated_time" content="2018-05-27T05:11:47.844Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="大！前！端！坑&#x2F;记">
 <meta name="twitter:description" content="一. 比较实用的jq获取表单数据并遍历数据的方法，name是指每条表单的name属性。12345678var data = $(&amp;quot;#button&amp;quot;).serializeArray();    postData = &amp;#123;&amp;#125;;    $(data).each(function(i)&amp;#123;       postData[this.name] = this.va">
@@ -508,7 +508,8 @@
 <blockquote>
 <p>48-hasOwnProperty和isPrototypeOf</p>
 </blockquote>
-<p>hasOwnProperty：区分一个属性到底是基本的还是从原型中找到的,是用来判断一个对象是否有你给出名称的属性或对象。不过需要注意的是，此方法无法检查该对象的原型链中是否具有该属性，该属性必须是对象本身的一个成员。<br>isPrototypeOf:是用来判断要检查其原型链的对象是否存在于指定对象实例中，是则返回true，否则返回false</p>
+<p>hasOwnProperty：区分一个属性到底是基本的还是从原型中找到的,是用来判断一个对象是否有你给出名称的属性或对象。不过需要注意的是，此方法无法检查该对象的原型链中是否具有该属性，该属性必须是对象本身的一个成员。origin.hasOwnproperty(prop)判断的是原型上的属性,for in 判断的是自己和原型,obj.hasOwnProperty判断是实例上有没有,in是能否读取到,同时用是为了判断原型还是实例。如果你直接用hasOwnProperty如果不存在就是not defined的吧,但是你也不知道在不在原型</p>
+<p>isPrototypeOf:是用来判断要检查其原型链的对象是否存在于指定对象实例中，是则返回true，否则返回false</p>
 <blockquote>
 <p>49-node.insertBefore(newnode[,existingnode])</p>
 </blockquote>
@@ -1684,14 +1685,10 @@
 </li>
 <li><p>根据渲染树渲染页面（计算布局、绘制页面）</p>
 </li>
-<li></li>
-</ol>
-<ul>
-<li>渲染过程中遇到script节点（不含defer和async）时，暂停渲染，执行js脚本。</li>
-<li>如果是异步脚本，则不会阻塞渲染：<br>如果脚本带有defer属性，则不会执行，需要等到页面渲染完成再执行。<br>如果脚本带有async属性，则下载完后就执行，不需要等到页面渲染完成再执行，并且不会暂停渲染。（因此不要在异步脚本中操纵dom）</li>
-</ul>
-<ol>
-<li>继续渲染直到完成。——–页面渲染完成则触发<strong>load</strong>事件</li>
+<li><p>渲染过程中遇到script节点（不含defer和async）时，暂停渲染，执行js脚本。<br>如果是异步脚本，则不会阻塞渲染：<br>如果脚本带有defer属性，则不会执行，需要等到页面渲染完成再执行。<br>如果脚本带有async属性，则下载完后就执行，不需要等到页面渲染完成再执行，并且不会暂停渲染。（因此不要在异步脚本中操纵dom）</p>
+</li>
+<li><p>继续渲染直到完成。——–页面渲染完成则触发<strong>load</strong>事件</p>
+</li>
 </ol>
 <blockquote>
 <p>以上过程并非严格按照顺序执行，第1,2步还没完成，第3,4步可能就已经开始了。第3,4步还没完成，第5步就已经开始了</p>
